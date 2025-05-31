@@ -12,6 +12,7 @@
     color: #333;
   }
 
+  /* Hero section með stórri mynd og texta */
   .hero {
     position: relative;
     height: 100vh;
@@ -25,7 +26,6 @@
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 
   .hero h1 {
@@ -40,20 +40,49 @@
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   }
 
-  .section {
-    max-width: 900px;
-    margin: 0 auto 40px;
-    padding: 40px 20px 20px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-radius: 8px 8px 0 0;
-    position: relative;
-    top: -40px; /* Fær section aðeins upp yfir botn hero svo það tengist */
+  /* Navigation bar fyrir að smella á section */
+  nav {
+    background: #0b6d1c;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
   }
 
-  .section h2 {
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #90ee90;
+  }
+
+  /* Sectionin, hvert fyrir sig */
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px 20px 40px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+
+  section h2 {
     margin-top: 0;
     color: #0b6d1c;
+  }
+
+  section img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  iframe {
+    border-radius: 8px;
   }
 </style>
 </head>
@@ -64,25 +93,33 @@
     <p>Balancing Carbon, Financing the Future</p>
   </div>
 
-  <div class="section">
+  <!-- Navigation með anchor links á section -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#emissions">CO₂ Emissions</a>
+    <a href="#learn">Learn More</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
     <h2>About Monetize CO₂</h2>
     <p>
       Monetize CO₂ is a carbon offsetting bank dedicated to reducing global carbon emissions. 
       We provide individuals and companies with verified carbon credits and innovative tools 
       to support sustainable projects worldwide.
     </p>
-  </div>
+  </section>
 
-  <div class="section">
+  <section id="emissions">
     <h2>CO₂ Emissions 2025</h2>
     <p>
       Global CO₂ emissions are projected to reach approximately 36.8 billion tonnes in 2025. 
       It is critical to take immediate action to balance these emissions through effective carbon offset projects.
     </p>
-    <img src="https://cdn.pixabay.com/photo/2020/12/14/18/26/co2-5832249_1280.jpg" alt="Carbon offsetting diagram" style="max-width:100%; border-radius:8px;" />
-  </div>
+    <img src="https://cdn.pixabay.com/photo/2020/12/14/18/26/co2-5832249_1280.jpg" alt="Carbon offsetting diagram" />
+  </section>
 
-  <div class="section">
+  <section id="learn">
     <h2>Learn More</h2>
     <p>
       Discover how carbon pricing and offsetting work to shift global behavior towards sustainability.
@@ -95,13 +132,13 @@
       frameborder="0" 
       allowfullscreen>
     </iframe>
-  </div>
+  </section>
 
-  <div class="section" id="contact">
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:info@monetizeco2.org">info@monetizeco2.org</a></p>
     <p>Location: Reykjavik, Iceland</p>
-  </div>
+  </section>
 
 </body>
 </html>
